@@ -2,13 +2,10 @@
 
 /**
  * Library for interacting with the HipChat REST API.
- * 
- * The file is get from https://wordpress.org/plugins/hipchat/
- * 
+ *
  * @see http://api.hipchat.com/docs/api
- * @see https://wordpress.org/plugins/hipchat/
  */
-class HipChat {
+class Anpbp_HipChat {
 
   const DEFAULT_TARGET = 'https://api.hipchat.com';
 
@@ -145,14 +142,14 @@ class HipChat {
     if (strlen($response) == 0) {
       $errno = curl_errno($ch);
       $error = curl_error($ch);
-      throw new HipChat_Exception(self::STATUS_BAD_RESPONSE,
+      throw new Anpbp_HipChat_Exception(self::STATUS_BAD_RESPONSE,
         "CURL error: $errno - $error", $url);
     }
 
     // make sure we got a 200
     $code = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
     if ($code != self::STATUS_OK) {
-      throw new HipChat_Exception($code,
+      throw new Anpbp_HipChat_Exception($code,
         "HTTP status code: $code, response=$response", $url);
     }
 
@@ -187,7 +184,7 @@ class HipChat {
     // make sure response is valid json
     $response = json_decode($response);
     if (!$response) {
-      throw new HipChat_Exception(self::STATUS_BAD_RESPONSE,
+      throw new Anpbp_HipChat_Exception(self::STATUS_BAD_RESPONSE,
         "Invalid JSON received: $response", $url);
     }
 
@@ -197,7 +194,7 @@ class HipChat {
 }
 
 
-class HipChat_Exception extends Exception {
+class Anpbp_HipChat_Exception extends Exception {
   public function __construct($code, $info, $url) {
     $message = "HipChat API error: code=$code, info=$info, url=$url";
     parent::__construct($message, (int)$code);
