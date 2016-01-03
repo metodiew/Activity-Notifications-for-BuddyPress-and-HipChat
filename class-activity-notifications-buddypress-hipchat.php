@@ -22,11 +22,6 @@ if ( ! defined( 'ANBPH_TEXTDOMAIN' ) ) {
 	define( 'ANBPH_TEXTDOMAIN', 'anbph' );
 }
 
-if ( ! defined( 'ANBPH_TEXTDOMAIN' ) ) {
-	define( 'ANBPH_TEXTDOMAIN', 'anbph' );
-}
-
-
 if ( ! defined( 'ANBPH_DIR' ) ) {
 	define( 'ANBPH_DIR', dirname( __FILE__ ) ); // plugin dir
 }
