@@ -2,7 +2,7 @@
 /*
 Plugin Name: Activity Notifications for BuddyPress and HipChat
 Plugin URI: https://github.com/metodiew/Activity-Notifications-for-BuddyPress-and-HipChat
-Description: Send a message to a HipChat room whenever a post is published.
+Description: Send a message to a HipChat room whenever a BuddyPress Activity is published.
 Version: 1.0
 Author: Stanko Metodiev
 Author URI: http://metodiew.com

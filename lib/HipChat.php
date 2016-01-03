@@ -2,7 +2,10 @@
 
 /**
  * Library for interacting with the HipChat REST API.
+ * 
+ * This file is get from https://wordpress.org/plugins/hipchat/
  *
+ * @see https://wordpress.org/plugins/hipchat/
  * @see http://api.hipchat.com/docs/api
  */
 class Anpbp_HipChat {
