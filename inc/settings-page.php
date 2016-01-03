@@ -89,6 +89,7 @@ if ( isset( $_POST['anbph_check_integration'] ) ) {
 		  		echo '<div class="error">'. $error .'</div>';
 			}
 			
+			_e( 'Click the button to check if the integration is okay. This will send a message ot the room.', ANBPH_TEXTDOMAIN );
 			submit_button( 'Check Integration', 'primary', 'anbph_check_integration' );
 			?>
 		</div>
