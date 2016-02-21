@@ -86,6 +86,8 @@ class Activity_Notifications_BuddyPress_HipChat {
 			
 			// Get Plugin Options
 			$anbph_options = get_option( 'anbph_hipchat' );
+			$message_length = ! empty( $anbph_options['message_length'] ) ? $anbph_options['message_length'] : 10;
+			
 			if ( ! empty( $anbph_options['auth_token'] ) ) {
 				$auth_token = $anbph_options['auth_token'];
 			}
@@ -110,7 +112,7 @@ class Activity_Notifications_BuddyPress_HipChat {
 			$activity_content = $post->content;
 			
 			if ( ! empty( $activity_content ) ) {
-				$activity_content = wp_trim_words( $activity_content, 6 );
+				$activity_content = wp_trim_words( $activity_content, $message_length );
 			} else {
 				$activity_content = __( 'No Title', ANBPH_TEXTDOMAIN );
 			}
@@ -148,6 +150,7 @@ class Activity_Notifications_BuddyPress_HipChat {
 		$input['auth_token'] = ! empty( $input['auth_token'] ) ? esc_attr( $input['auth_token'] ) : '';
 		$input['from_name'] = ! empty( $input['from_name'] ) ? esc_attr( $input['from_name'] ) : '';
 		$input['room_name'] = ! empty( $input['room_name'] ) ? esc_attr( $input['room_name'] ) : '';
+		$input['message_length'] = ! empty( $input['message_length'] ) ? esc_attr( $input['message_length'] ) : '';
 		
 		return $input;
 	}

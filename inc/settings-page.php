@@ -5,6 +5,7 @@ $anbph_options = get_option( 'anbph_hipchat' );
 $auth_token = ! empty( $anbph_options['auth_token'] ) ? $anbph_options['auth_token'] : '';
 $from_name = ! empty( $anbph_options['from_name'] ) ? $anbph_options['from_name'] : '';
 $room_name = ! empty( $anbph_options['room_name'] ) ? $anbph_options['room_name'] : '';
+$message_length = ! empty( $anbph_options['message_length'] ) ? $anbph_options['message_length'] : '';
 
 $updated = null;
 $error = null;
@@ -69,6 +70,14 @@ if ( isset( $_POST['anbph_check_integration'] ) ) {
 		        <td>
 		        	<input type="text" id="room_name" name="anbph_hipchat[room_name]" value="<?php echo esc_attr( $room_name ); ?>" />
 		        	<label for="room_name"><?php _e( 'Name of the room to send messages to.', ANBPH_TEXTDOMAIN ); ?></label>
+		        </td>
+	        </tr>
+	        
+	        <tr valign="top">
+		        <th scope="row"><?php _e( 'Message length', ANBPH_TEXTDOMAIN ); ?></th>
+		        <td>
+		        	<input type="text" id="message_length" name="anbph_hipchat[message_length]" value="<?php echo esc_attr( $message_length ); ?>" />
+		        	<label for="message_length"><?php _e( 'The number of characters that will be displayed. By default they will be 10.', ANBPH_TEXTDOMAIN ); ?></label>
 		        </td>
 	        </tr>
 	    </table>
